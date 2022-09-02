@@ -1,0 +1,74 @@
+.ls {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+.form > input {
+    padding: 10px 20px;
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    outline: none;
+}
+::placeholder {
+    font-size: 16px;
+}
+.btn {
+    background-color: rgb(79, 187, 254);
+    border: 1px solid rgb(79, 187, 254);
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+.btn:hover {
+    color: rgb(79, 187, 254);
+    background-color: white;
+}
+.rs {
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
+.signup {
+    margin: 68px auto;
+}
+.login {
+    margin: auto;
+    transform: translateY(30%);
+}
+.profileform {
+    margin: 100px auto;
+}
+.profile {
+    margin: 110px auto;
+}
+.iep {
+    font-size: 20px;
+}
+.welbtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.profile > p {
+    margin: 30px;
+    font-size: 20px;
+}
+.lgbtn {
+    background-color: rgb(79, 187, 254);
+    border: 1px solid rgb(79, 187, 254);
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.lgbtn:hover {
+    color: rgb(79, 187, 254);
+    background-color: white;
+}
