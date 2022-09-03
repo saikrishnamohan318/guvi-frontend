@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Logincomponent from "./login";
 
 function Profilecomponent(){
     const navigate = useNavigate();
@@ -12,9 +13,11 @@ function Profilecomponent(){
         city: ''
     })
     useEffect(()=>{
-        fetch(`https://guvi-backend.vercel.app/getDetails/${data1.email}`).then(res=>{
-            return res.json();
-        }).then(data=>data.map((d)=>setGetData({name:d.name, age:d.age, gender:d.gender, mobile:d.mobile, city:d.city})))
+        if(data1){
+            fetch(`https://guvi-backend.vercel.app/getDetails/${data1.email}`).then(res=>{
+                return res.json();
+            }).then(data=>data.map((d)=>setGetData({name:d.name, age:d.age, gender:d.gender, mobile:d.mobile, city:d.city})))
+        }
     },[])
     var delUser = () => {
         localStorage.removeItem('logindetails');
@@ -22,7 +25,8 @@ function Profilecomponent(){
     }
     return(
         <>
-        {getData && 
+        {data1 ? (
+            getData && 
             <div className="ls profile">
                 <h1>Profile</h1>
                 <hr/>
@@ -35,7 +39,9 @@ function Profilecomponent(){
                 <p>Mobile : <span>{getData.mobile}</span></p>
                 <p>City : <span>{getData.city}</span></p>
             </div>
-        }
+        ) : (
+            <Logincomponent />
+        )}
         </>
     )
 }
