@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logincomponent from './login';
+import Profilecomponent from "./profile";
 
 function Profileformcomponent(){
     const navigate = useNavigate();
@@ -30,7 +31,9 @@ function Profileformcomponent(){
     }
     return(
         <>
-        {data ? (
+        {data ? ( data.age && data.gender ? (
+            <Profilecomponent />
+        ) : (
             <div className="ls profileform">
                 <h1>Profile</h1>
                 <form className="form">
@@ -44,6 +47,7 @@ function Profileformcomponent(){
                     <button onClick={handleData} className="btn">Update</button>  
                 </form>
             </div>
+        )
         ) : (
             <Logincomponent />
         )}
